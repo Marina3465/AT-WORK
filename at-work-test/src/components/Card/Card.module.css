@@ -1,0 +1,132 @@
+.card {
+    position: relative;
+    
+}
+.card-content{
+    width: 360px;
+    background-color: #FDFDFD;
+    border-radius: 16px;
+    padding: 24px;
+    display: flex;
+
+}
+.card-content:link{
+    text-decoration: none;
+
+}
+.card-photo {
+    min-width: 112px;
+    max-width: 112px;
+    height: 112px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.card-photo img {
+    width: auto;
+    height: 100%;
+}
+
+.card-data {
+    margin: 0 10px 0 20px;
+    position: relative;
+}
+
+.user-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: #22A0BC;
+}
+
+.company-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #595959;
+}
+
+.city {
+    font-size: 14px;
+    font-weight: 500;
+    color: #9C9C9C;
+    position: absolute;
+    bottom: 0;
+}
+
+.btn-more {
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 24px;
+    height: 24px;
+    background-image: url('/icons/more.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.btn-more:hover {
+    background-image: url('/icons/more-hover.svg');
+
+}
+
+.btn-more:active {
+    background-image: url('/icons/more-active.svg');
+
+}
+
+
+@media (max-width: 550px) {
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        width: 150px;
+        height: 250px;
+        padding: 16px;
+    }
+
+    .card-photo {
+        min-width: 100%;
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .card-data {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        margin-top: 20px;
+        position: static;
+    }
+
+    .user-name {
+        font-size: 14px;
+    }
+
+    .company-name {
+        font-size: 12px;
+    }
+
+    .city {
+        font-size: 10px;
+        bottom: 20px;
+
+    }
+
+    .btn-more {
+        top: 130px;
+        background-image: url('/icons/mobile-more.svg');
+    }
+
+    .btn-more:hover {
+        background-image: url('/icons/mobile-more-active.svg');
+    }
+
+    .btn-more:active {
+        background-image: url('/icons/mobile-more-active.svg');
+    }
+}

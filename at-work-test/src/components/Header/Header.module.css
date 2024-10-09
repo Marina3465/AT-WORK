@@ -1,0 +1,79 @@
+.header {
+    height: 56px;
+    background-color: #fdfdfd;
+    display: flex;
+    align-items: center;
+}
+
+.header-content {
+    width: 1160px;
+    padding: 0 10px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo p {
+    margin-left: 8px;
+    font-size: 24px;
+    font-weight: 400;
+    color: #333153;
+
+}
+
+.header-user-data {
+    display: flex;
+    align-items: center;
+}
+
+.user-photo {
+    width: 20px;
+    height: 20px;
+    background-image: url('/photo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-right: 8px;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #595959;
+
+}
+
+
+
+@media (max-width: 550px) {
+    .header-content{
+        padding: 0 16px;
+    }
+    .user-name{
+        display: none;
+    }
+    .btn-icon{
+        display: none;
+    }
+}
