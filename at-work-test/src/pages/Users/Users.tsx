@@ -53,7 +53,7 @@ const Users: FC<UsersProps> = () => {
     return (
         <>
             <Header />
-            <div className={st['content']}>
+            <div className='content'>
                 <div className={st['user-active']}>
                     <h1>Активные</h1>
                     <div className={st['active-content']}>

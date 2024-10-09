@@ -32,6 +32,12 @@
     background-color: #F4F4F4;
 }
 
+@media (min-width: 1025px) {
+    .dropdown-btn:hover {
+        color: #22A0BC;
+    }
+}
+
 @media (max-width: 550px) {
     .dropdown {
         width: 160px;

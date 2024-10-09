@@ -18,18 +18,21 @@ export const userDataSlice = createSlice({
     initialState,
     reducers: {
         setUsers: (state, action: PayloadAction<IUser[]>) => {
-            if (localStorage.getItem('data') && localStorage.getItem('data') !== undefined
-                && localStorage.getItem('data_archive') && localStorage.getItem('data_archive') !== undefined
-                && localStorage.getItem('data_hidden') && localStorage.getItem('data_hidden') !== undefined) {
-
+            if (localStorage.getItem('data') && localStorage.getItem('data') !== undefined) {
                 state.datas = JSON.parse(localStorage.getItem('data')!);
-                state.archiveDatas = JSON.parse(localStorage.getItem('data_archive')!);
-                state.hiddenDatas = JSON.parse(localStorage.getItem('data_hidden')!);
             } else {
                 state.datas = action.payload;
-                state.archiveDatas = [];
-                state.hiddenDatas = [];
                 localStorage.setItem('data', JSON.stringify(action.payload));
+            }
+            if (localStorage.getItem('data_archive') && localStorage.getItem('data_archive') !== undefined) {
+                state.archiveDatas = JSON.parse(localStorage.getItem('data_archive')!);
+            }else{
+                state.archiveDatas =[];
+            }
+            if (localStorage.getItem('data_hidden') && localStorage.getItem('data_hidden') !== undefined) {
+                state.hiddenDatas = JSON.parse(localStorage.getItem('data_hidden')!);
+            }else{
+                state.hiddenDatas =[];
             }
 
         },
