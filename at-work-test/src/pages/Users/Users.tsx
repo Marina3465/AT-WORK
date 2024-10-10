@@ -7,21 +7,12 @@ import { RootState } from "../../store/store";
 import { setUsers } from "../../store/slices/userDataSlice";
 import Header from "../../components/Header/Header";
 import Button from "../../components/Button/Button";
+import { IData } from "../../components/DataProfile/DataProfile";
 
 interface UsersProps {
 
 }
 
-export interface IUser {
-    id: number,
-    username: string,
-    company: {
-        name: string
-    },
-    address: {
-        city: string
-    }
-}
 
 const Users: FC<UsersProps> = () => {
     const users = useSelector((state: RootState) => state.users.datas);
@@ -57,7 +48,7 @@ const Users: FC<UsersProps> = () => {
                 <div className={st['user-active']}>
                     <h1>Активные</h1>
                     <div className={st['active-content']}>
-                        {users.map((user: IUser) => {
+                        {users.map((user: IData) => {
                             return <Card key={user.id} archive={false} id={user.id} name={user.username} company={user.company.name} city={user.address.city} colorBlack={false} />
                         })
                         }
@@ -67,7 +58,7 @@ const Users: FC<UsersProps> = () => {
                 <div className={st['user-archive']}>
                     <h1>Архив</h1>
                     <div className={st['archive-content']}>
-                        {archive.map((user: IUser) => {
+                        {archive.map((user: IData) => {
                             return <Card key={user.id} archive={true} id={user.id} name={user.username} company={user.company.name} city={user.address.city} colorBlack={true} />
                         })
                         }

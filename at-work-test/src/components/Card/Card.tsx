@@ -5,9 +5,9 @@ import { useDropdown } from "../../hooks/useDropdown";
 
 interface CardProps {
     id: number,
-    name: string,
-    company: string,
-    city: string,
+    name: string | undefined,
+    company: string | undefined,
+    city: string | undefined,
     colorBlack: boolean
     archive: boolean
 }
