@@ -47,8 +47,7 @@ const EditUser: FC<EditUserProps> = () => {
                 <button className={st['btn-back']} onClick={backToMainPage}>Назад</button>
                 <div className={st['data-blocks']}>
                     <div className={st['menu']}>
-                        <div className={st['photo']}>
-                            <img src="/photo.jpg" alt="Фото профиля" />
+                        <div className={st['photo']} style={{backgroundImage: 'url("/photo.jpg")'}}>
                         </div>
                         <div className={st['btn-select-data']}>
                             <button onClick={() => getData('prof')} style={{ color: `${dataProf ? 'black' : ''}` }}>Данные профиля</button>

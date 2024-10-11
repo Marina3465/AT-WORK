@@ -33,8 +33,6 @@ const DataProfile: FC<DataProfileProps> = () => {
     const [phone, setPhone] = useState<string | undefined>('');
     const [company, setCompany] = useState<string | undefined>('');
     const [city, setCity] = useState<string | undefined>('');
-    const [error, setError] = useState<boolean>(false);
-
 
     useEffect(() => {
         const localDate: IData[] = JSON.parse(localStorage.getItem('data')!);
