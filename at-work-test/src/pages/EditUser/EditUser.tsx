@@ -3,6 +3,7 @@ import Header from "../../components/Header/Header";
 import st from './EditUser.module.css';
 import { useNavigate } from "react-router-dom";
 import DataProfile from "../../components/DataProfile/DataProfile";
+import Modal from "../../components/Modal/Modal";
 
 interface EditUserProps {
 
@@ -14,6 +15,7 @@ const EditUser: FC<EditUserProps> = () => {
     const [workSpace, setWorkSpace] = useState<boolean>(false);
     const [dataPrivate, setDataPrivate] = useState<boolean>(false);
     const [security, setSecurity] = useState<boolean>(false);
+    const [modalOpen, setModalOpen] = useState<boolean>(false);
 
 
     const backToMainPage = () => {
@@ -58,7 +60,7 @@ const EditUser: FC<EditUserProps> = () => {
                     </div>
                     <div className={st['data']}>
                         {dataProf &&
-                            <DataProfile />
+                            <DataProfile modalOpen={modalOpen} setModalOpen={setModalOpen} />
                         }
                         {workSpace &&
                             <>
@@ -82,6 +84,7 @@ const EditUser: FC<EditUserProps> = () => {
 
                 </div>
             </div>
+            {modalOpen && <Modal modalOpen={modalOpen} setModalOpen={setModalOpen} />}
         </>
     );
 }

@@ -6,7 +6,8 @@ import { useDispatch } from "react-redux";
 import { uploadItem } from "../../store/slices/userDataSlice";
 
 interface DataProfileProps {
-
+    modalOpen: boolean,
+    setModalOpen: (val: boolean) => void
 }
 
 export interface IData {
@@ -23,7 +24,7 @@ export interface IData {
     }
 }
 
-const DataProfile: FC<DataProfileProps> = () => {
+const DataProfile: FC<DataProfileProps> = (props) => {
 
     const dispatch = useDispatch();
     const { id } = useParams();
@@ -65,6 +66,8 @@ const DataProfile: FC<DataProfileProps> = () => {
                 }
             }
             dispatch(uploadItem(item));
+            props.setModalOpen(true);
+            document.body.style.overflow = 'hidden';
         }
     }
 
@@ -75,41 +78,31 @@ const DataProfile: FC<DataProfileProps> = () => {
             <Input
                 label={'Имя'}
                 value={name}
-                error={!name}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setName(e.target.value)}
             />
             <Input
                 label={'Никнейм'}
                 value={userName}
-                error={!userName}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setUserName(e.target.value)}
             />
             <Input
                 label={'Почта'}
                 value={email}
-                error={!email}
-
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
             />
             <Input
                 label={'Город'}
                 value={city}
-                error={!city}
-
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCity(e.target.value)}
             />
             <Input
                 label={'Телефон'}
                 value={phone}
-                error={!phone}
-
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setPhone(e.target.value)}
             />
             <Input
                 label={'Название компании'}
                 value={company}
-                error={!company}
-
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => setCompany(e.target.value)}
             />
 
